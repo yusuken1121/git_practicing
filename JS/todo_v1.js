@@ -13,16 +13,29 @@ const onClickAdd = () => {
 
   // generate div
   const div = document.createElement("div");
-  div.className = "list-low";
+  div.className = "list-row";
 
   // generate p
   const p = document.createElement("p");
   p.className = "one-todo";
   p.innerText = inputText;
 
+  // generate completed button
+  const completeButton = document.createElement("button");
+  completeButton.innerText = "completed";
+  completeButton.addEventListener("click", () => {
+    alert();
+  });
+
+  // generate delete button
+  const deleteButton = document.createElement("button");
+  deleteButton.innerText = "Delete";
+
   // liタグの子要素に各要素を設定
-  li.appendChild(div);
   div.appendChild(p);
+  div.appendChild(completeButton);
+  div.appendChild(deleteButton);
+  li.appendChild(div);
 
   // 未完了リストに追加
   document.getElementById("incomplete-area").appendChild(li);
