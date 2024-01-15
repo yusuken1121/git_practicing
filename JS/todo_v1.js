@@ -23,13 +23,23 @@ const onClickAdd = () => {
   // generate completed button
   const completeButton = document.createElement("button");
   completeButton.innerText = "completed";
+
   completeButton.addEventListener("click", () => {
-    alert();
+    //delete "delete" and "completed" button
+    const moveTarget = completeButton.closest("li");
+    completeButton.nextElementSibling.remove();
+    completeButton.remove();
   });
 
   // generate delete button
   const deleteButton = document.createElement("button");
   deleteButton.innerText = "Delete";
+
+  deleteButton.addEventListener("click", () => {
+    // add a delete function
+    const deleteTarget = deleteButton.closest("li");
+    document.getElementById("incomplete-area").removeChild(deleteTarget);
+  });
 
   // liタグの子要素に各要素を設定
   div.appendChild(p);
